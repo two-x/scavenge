@@ -29,7 +29,7 @@ void loop() {
         shifted[i] = composites[(i + age) % 26];
         divided[i] = (float)(i + 1) / (float)shifted[i];
         multiplied[i] = 10.0 * divided[i];
-        truncated[i] = (float)((int)(10.0 * multiplied[i])) / 10.0;
+        truncated[i] = (float)((int)(10.0 * (multiplied[i] + 0.001)) / 10.0);
         printf("%2d  %s  %2d  %2d  %6.4f  %6.3f  %4.1f  %s\n", i+1, String(alphabet[i]), composites[i], shifted[i], divided[i], multiplied[i], truncated[i], String(alphabet[i])); 
     }
     while(true);
